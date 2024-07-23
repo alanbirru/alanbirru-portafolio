@@ -1,0 +1,18 @@
+---
+import AvatarImg from '../images/avatar.jpg';
+import Image from 'astro/components/Image.astro';
+
+interface Props {
+  className?: string;
+}
+const { className } = Astro.props;
+---
+
+<div class=`relative rounded-full w-12 shine-effect ${className} `>
+  <Image
+    src={AvatarImg}
+    alt='avatar'
+    loading={'eager'}
+    class='rounded-full w-full h-full'
+  />
+</div>

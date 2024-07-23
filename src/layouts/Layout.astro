@@ -1,0 +1,45 @@
+---
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+import '@fontsource/geist-sans';
+import TopBlur from '../components/TopBlur.astro';
+import BottomBlur from '@/components/BottomBlur.astro';
+import NavMenu from '../components/NavMenu';
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='description' content='Astro description' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <TopBlur />
+    <div class='container mx-auto sm:py-36 py-24'>
+      <slot />
+    </div>
+    <NavMenu client:load />
+    <BottomBlur />
+  </body>
+</html>
+<style is:global>
+  html {
+    color-scheme: dark;
+  }
+  body {
+    font-family: 'Geist Sans', sans-serif;
+  }
+  p {
+    color: rgb(214, 214, 214);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    text-wrap: pretty;
+  }
+</style>
