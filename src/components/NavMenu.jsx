@@ -11,7 +11,7 @@ function NavMenu() {
       <Dock
         magnification={60}
         direction='bottom'
-        className='backdrop-blur-sm bg-[#ffffff07] border-neutral-600 gap-5'
+        className=' backdrop-blur-lg bg-[#46464644] border-neutral-600 gap-5'
       >
         <DockIcon data-tooltip-id='menu' data-tooltip-content='Menu'>
           <a href='/'>
