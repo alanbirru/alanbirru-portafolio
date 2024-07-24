@@ -7,7 +7,7 @@ function NavMenu() {
   const stroke = '1.3';
 
   return (
-    <div className='fixed translate-x-[-50%] bottom-9 left-[50%] hidden sm:block'>
+    <div className='fixed translate-x-[-50%] bottom-9 left-[50%]'>
       <Dock
         magnification={60}
         direction='bottom'
