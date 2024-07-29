@@ -39,6 +39,7 @@ function NavMenu() {
                 strokeLinejoin='round'
                 className='icon icon-tabler icons-tabler-outline icon-tabler-user'
               >
+                <title>about</title>
                 <path stroke='none' d='M0 0h24v24H0z' fill='none' />
                 <path d='M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0' />
                 <path d='M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2' />
@@ -63,6 +64,7 @@ function NavMenu() {
                 strokeLinejoin='round'
                 className='icon icon-tabler icons-tabler-outline icon-tabler-code'
               >
+                <title>proyectos</title>
                 <path stroke='none' d='M0 0h24v24H0z' fill='none' />
                 <path d='M7 8l-4 4l4 4' />
                 <path d='M17 8l4 4l-4 4' />
@@ -88,6 +90,7 @@ function NavMenu() {
                 strokeLinejoin='round'
                 className='icon icon-tabler icons-tabler-outline icon-tabler-stack-3'
               >
+                <title>proyectos</title>
                 <path stroke='none' d='M0 0h24v24H0z' fill='none' />
                 <path d='M12 2l-8 4l8 4l8 -4l-8 -4' />
                 <path d='M4 10l8 4l8 -4' />
