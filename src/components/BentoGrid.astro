@@ -1,12 +1,14 @@
 ---
 import TitleGrid from './TitleGrid.astro';
+import monarcaImg from '../images/screenshot-monarca.png';
+import Image from 'astro/components/Image.astro';
 ---
 
 <section
   class='grid grid-cols-3 gap-4 flex-wrap pt-24 justify-center items-center animate-fade-down text-sm'
 >
   <article
-    class='w-full h-[200px] rounded-lg bg-[#15151510] border border-neutral-700 backdrop-blur-2xl shadow-xl p-4 col-span-3 md:col-span-2'
+    class='w-full h-[225px] rounded-lg bg-[#15151510] border border-neutral-700 backdrop-blur-2xl shadow-xl p-4 col-span-3 md:col-span-2'
   >
     <TitleGrid>
       <svg
@@ -39,7 +41,7 @@ import TitleGrid from './TitleGrid.astro';
     </p>
   </article>
   <article
-    class='w-full h-[200px] rounded-lg bg-[#15151510] border border-neutral-700 backdrop-blur-2xl shadow-xl p-4 col-span-3 md:col-span-1'
+    class='w-full h-[225px] rounded-lg bg-[#15151510] border border-neutral-700 backdrop-blur-2xl shadow-xl p-4 col-span-3 md:col-span-1'
   >
     <TitleGrid>
       <svg
@@ -61,12 +63,15 @@ import TitleGrid from './TitleGrid.astro';
         <path d='M4 14l8 4l8 -4'></path>
       </svg>
 
-      <span class='inline-block'>Stack</span>
+      <span class='inline-block'>Proyectos</span>
     </TitleGrid>
+    <div class='flex justify-center items-center h-36'>
+      <Image src={monarcaImg} alt='moanrca' class='rounded-md w-80' />
+    </div>
   </article>
 
   <article
-    class='w-full rounded-lg bg-[#15151510] border border-neutral-700 backdrop-blur-2xl shadow-xl p-4 col-span-3 md:col-span-1 lg:h-[200px] h-auto'
+    class='w-full rounded-lg bg-[#15151510] border border-neutral-700 backdrop-blur-2xl shadow-xl p-4 col-span-3 md:col-span-1 lg:h-[250px] h-auto'
   >
     <TitleGrid>
       <svg
@@ -93,7 +98,7 @@ import TitleGrid from './TitleGrid.astro';
       Creando experiencias digitales únicas. ¡Hablemos sobre tu próximo
       proyecto!
     </p>
-    <div class='flex gap-2 mt-7'>
+    <div class='flex gap-2 mt-11'>
       <a
         href=''
         class='border border-neutral-700 inline-flex items-center justify-center rounded-md text-sm bg-[#1515155c] text-center flex-1 py-2'
@@ -109,7 +114,7 @@ import TitleGrid from './TitleGrid.astro';
   </article>
 
   <article
-    class='w-full rounded-lg h-[200px] bg-[#15151510] border border-neutral-700 backdrop-blur-2xl shadow-xl p-4 col-span-3 md:col-span-2'
+    class='w-full rounded-lg bg-[#15151510] border border-neutral-700 backdrop-blur-2xl shadow-xl p-4 col-span-3 md:col-span-2 h-[250px]'
   >
     <TitleGrid>
       <svg
@@ -130,19 +135,14 @@ import TitleGrid from './TitleGrid.astro';
           d='M5 6m0 1a1 1 0 0 1 1 -1h12a1 1 0 0 1 1 1v8a1 1 0 0 1 -1 1h-12a1 1 0 0 1 -1 -1z'
         ></path>
       </svg>
-      <span class='inline-block'>Proyectos</span>
+      <span class='inline-block'>Stack</span>
     </TitleGrid>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
-      mollitia voluptate natus, odio placeat eaque beatae ab sint quasi
-      consequatur!
-    </p>
   </article>
 </section>
 
 <style>
   p {
-    line-height: 1.5rem;
+    line-height: 1.6rem;
     color: rgb(161 161 170);
     font-size: 16px;
   }
