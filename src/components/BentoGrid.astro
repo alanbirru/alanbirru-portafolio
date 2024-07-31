@@ -2,6 +2,7 @@
 import TitleGrid from './TitleGrid.astro';
 import monarcaImg from '../images/screenshot-monarca.png';
 import Image from 'astro/components/Image.astro';
+import StackContainer from './StackContainer.astro';
 ---
 
 <section
@@ -66,12 +67,16 @@ import Image from 'astro/components/Image.astro';
       <span class='inline-block'>Proyectos</span>
     </TitleGrid>
     <div class='flex justify-center items-center h-36'>
-      <Image src={monarcaImg} alt='moanrca' class='rounded-md w-80' />
+      <Image
+        src={monarcaImg}
+        alt='moanrca'
+        class='rounded-md w-80 hover:scale-105 transition-all hover:shadow-2xl'
+      />
     </div>
   </article>
 
   <article
-    class='w-full rounded-lg bg-[#15151510] border border-neutral-700 backdrop-blur-2xl shadow-xl p-4 col-span-3 md:col-span-1 lg:h-[250px] h-auto'
+    class='w-full rounded-lg bg-[#15151510] border border-neutral-700 backdrop-blur-2xl shadow-xl p-4 col-span-3 md:col-span-1 lg:h-[225px] h-auto'
   >
     <TitleGrid>
       <svg
@@ -105,7 +110,8 @@ import Image from 'astro/components/Image.astro';
         >Enviame un email</a
       >
       <a
-        href=''
+        href='https://wa.link/wvb56g'
+        target='_blank'
         class='border border-neutral-700 inline-flex items-center justify-center rounded-md text-sm bg-[#1515155c] text-center flex-1'
       >
         WhatsApp</a
@@ -114,7 +120,7 @@ import Image from 'astro/components/Image.astro';
   </article>
 
   <article
-    class='w-full rounded-lg bg-[#15151510] border border-neutral-700 backdrop-blur-2xl shadow-xl p-4 col-span-3 md:col-span-2 h-[250px]'
+    class='w-full rounded-lg bg-[#15151510] border border-neutral-700 backdrop-blur-2xl shadow-xl p-4 col-span-3 md:col-span-2 h-[225px]'
   >
     <TitleGrid>
       <svg
@@ -137,6 +143,7 @@ import Image from 'astro/components/Image.astro';
       </svg>
       <span class='inline-block'>Stack</span>
     </TitleGrid>
+    <StackContainer />
   </article>
 </section>
 
