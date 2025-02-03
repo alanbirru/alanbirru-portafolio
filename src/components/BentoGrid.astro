@@ -5,13 +5,23 @@ import Image from "astro/components/Image.astro";
 import StackContainer from "./StackContainer.astro";
 import Meteors from "@/components/magicui/meteors";
 import Particles from "@/components/magicui/particles";
+
+// Añadir constantes para la configuración común de los artículos
+const baseArticleClasses = "w-full rounded-lg bg-[#15151510] border border-neutral-700 backdrop-blur-2xl shadow-xl p-4"
+const articleAnimationClasses = "transition-all duration-300 hover:shadow-2xl hover:border-neutral-600"
+
+// Definir los enlaces de contacto como constantes
+const contactLinks = [
+  { text: "Email", href: "mailto:tuemail@ejemplo.com", target: "_self" },
+  { text: "WhatsApp", href: "https://wa.link/wvb56g", target: "_blank" }
+]
 ---
 
 <section
-  class="grid grid-cols-3 gap-4 flex-wrap pt-24 justify-center items-center animate-fade-down text-sm"
+  class="grid grid-cols-3 gap-4 flex-wrap pt-24 justify-center items-center animate-fade-down animate-duration-700 text-sm"
 >
   <article
-    class="w-full h-[230px] rounded-lg bg-[#15151510] border border-neutral-700 backdrop-blur-2xl shadow-xl p-4 col-span-3 md:col-span-2"
+    class={`${baseArticleClasses} ${articleAnimationClasses} h-[230px] col-span-3 md:col-span-2 relative`}
   >
     <Particles
       client:load
@@ -53,7 +63,7 @@ import Particles from "@/components/magicui/particles";
     </p>
   </article>
   <article
-    class="w-full h-[230px] rounded-lg bg-[#15151510] border border-neutral-700 backdrop-blur-2xl shadow-xl p-4 col-span-3 md:col-span-1"
+    class={`${baseArticleClasses} ${articleAnimationClasses} h-[230px] col-span-3 md:col-span-1`}
   >
     <TitleGrid>
       <svg
@@ -88,7 +98,7 @@ import Particles from "@/components/magicui/particles";
   </article>
 
   <article
-    class="w-full rounded-lg bg-[#15151510] border border-neutral-700 backdrop-blur-2xl shadow-xl p-4 col-span-3 md:col-span-1 lg:h-[230px] h-auto overflow-hidden"
+    class={`${baseArticleClasses} ${articleAnimationClasses} col-span-3 md:col-span-1 lg:h-[230px] h-auto overflow-hidden`}
   >
     <TitleGrid>
       <svg
@@ -117,23 +127,20 @@ import Particles from "@/components/magicui/particles";
       proyecto!
     </p>
     <div class="flex gap-2 mt-11">
-      <a
-        href=""
-        class="border border-neutral-700 inline-flex items-center justify-center rounded-md text-sm bg-[#1515155c] text-center flex-1 py-2"
-        >Email</a
-      >
-      <a
-        href="https://wa.link/wvb56g"
-        target="_blank"
-        class="border border-neutral-700 inline-flex items-center justify-center rounded-md text-sm bg-[#1515155c] text-center flex-1"
-      >
-        WhatsApp</a
-      >
+      {contactLinks.map(({ text, href, target }) => (
+        <a
+          href={href}
+          target={target}
+          class="border border-neutral-700 inline-flex items-center justify-center rounded-md text-sm bg-[#1515155c] text-center flex-1 py-2 hover:bg-[#15151580] transition-colors"
+        >
+          {text}
+        </a>
+      ))}
     </div>
   </article>
 
   <article
-    class="w-full rounded-lg bg-[#15151510] border border-neutral-700 backdrop-blur-2xl shadow-xl p-4 col-span-3 md:col-span-2 md:h-[230px] h-auto overflow-hidden"
+    class={`${baseArticleClasses} ${articleAnimationClasses} col-span-3 md:col-span-2 md:h-[230px] h-auto overflow-hidden relative`}
   >
     <Meteors number={30} client:load />
     <TitleGrid>
@@ -166,5 +173,18 @@ import Particles from "@/components/magicui/particles";
     line-height: 1.6rem;
     color: rgb(161 161 170);
     font-size: 16px;
+    max-width: 65ch; /* Mejora la legibilidad limitando el ancho del texto */
+  }
+
+  article {
+    isolation: isolate; /* Mejora el comportamiento del backdrop-blur */
+  }
+
+  /* Añadir media queries para mejorar la responsividad */
+  @media (max-width: 768px) {
+    p {
+      font-size: 14px;
+      line-height: 1.5rem;
+    }
   }
 </style>
